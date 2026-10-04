@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <header>
+        <h1>Crear cuenta</h1>
+        <p>Completa tus datos para registrarte.</p>
+      </header>
+
+      <!-- novalidate: las validaciones las hace script.js y no el navegador -->
+      <form id="formRegistro" novalidate>
+
+        <div class="campo">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Pérez" autocomplete="name" required minlength="3" aria-describedby="error-nombre">
+          <small id="error-nombre" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" autocomplete="email" required aria-describedby="error-correo">
+          <small id="error-correo" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="edad">Edad</label>
+          <input type="number" id="edad" name="edad" placeholder="Ej: 20" min="18" max="99" required aria-describedby="error-edad">
+          <small id="error-edad" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="0991234567" maxlength="10" pattern="[0-9]{10}" inputmode="numeric" autocomplete="tel" required aria-describedby="error-telefono">
+          <small id="error-telefono" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="pais">País</label>
+          <select id="pais" name="pais" required aria-describedby="error-pais">
+            <option value="" selected disabled>Selecciona tu país</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Perú">Perú</option>
+            <option value="Otro">Otro</option>
+          </select>
+          <small id="error-pais" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" autocomplete="new-password" required aria-describedby="error-password">
+          <small id="error-password" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="confirmPassword">Confirmar contraseña</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite la contraseña" minlength="8" autocomplete="new-password" required aria-describedby="error-confirmPassword">
+          <small id="error-confirmPassword" class="error-texto"></small>
+        </div>
+
+        <!-- Mensaje general de error o éxito del formulario -->
+        <div id="mensajeForm" class="mensaje" role="alert" aria-live="polite"></div>
+
+        <button type="submit" id="btnRegistro">Crear cuenta</button>
+      </form>
+
+      <footer>
+        <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Orden acordado: primero validaciones, luego autenticación -->
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
