@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <header>
+        <h1>Recuperar contraseña</h1>
+        <p>Te enviaremos un código de 6 dígitos a tu correo.</p>
+      </header>
+
+      <!-- Paso 1: correo -->
+      <div id="paso1">
+        <form id="formCorreoRec" novalidate>
+          <div class="campo">
+            <label for="correoRec">Correo electrónico</label>
+            <input type="email" id="correoRec" name="correoRec" placeholder="ejemplo@correo.com" autocomplete="email" required aria-describedby="error-correoRec">
+            <small id="error-correoRec" class="error-texto"></small>
+          </div>
+          <button type="submit" id="btnEnviarCodigo">Enviar código</button>
+        </form>
+      </div>
+
+      <!-- Paso 2: código (oculto al inicio) -->
+      <div id="paso2" class="oculto">
+        <form id="formCodigo" novalidate>
+          <div class="campo">
+            <label for="codigoRec">Código de 6 dígitos</label>
+            <input type="text" id="codigoRec" name="codigoRec" placeholder="123456" maxlength="6" pattern="[0-9]{6}" inputmode="numeric" autocomplete="one-time-code" required aria-describedby="error-codigoRec">
+            <small id="error-codigoRec" class="error-texto"></small>
+          </div>
+          <button type="submit" id="btnVerificar">Verificar</button>
+        </form>
+      </div>
+
+      <!-- Paso 3: nueva contraseña (oculto al inicio) -->
+      <div id="paso3" class="oculto">
+        <form id="formNuevaPass" novalidate>
+          <div class="campo">
+            <label for="nuevaPassword">Nueva contraseña</label>
+            <input type="password" id="nuevaPassword" name="nuevaPassword" placeholder="Mínimo 8 caracteres" minlength="8" autocomplete="new-password" required aria-describedby="error-nuevaPassword">
+            <small id="error-nuevaPassword" class="error-texto"></small>
+          </div>
+          <div class="campo">
+            <label for="confirmNuevaPassword">Confirmar nueva contraseña</label>
+            <input type="password" id="confirmNuevaPassword" name="confirmNuevaPassword" placeholder="Repite la contraseña" minlength="8" autocomplete="new-password" required aria-describedby="error-confirmNuevaPassword">
+            <small id="error-confirmNuevaPassword" class="error-texto"></small>
+          </div>
+          <button type="submit" id="btnCambiarPass">Cambiar contraseña</button>
+        </form>
+      </div>
+
+      <!-- Estado: "Enviando...", "Código enviado a tu correo" o el error -->
+      <div id="mensajeForm" class="mensaje" role="alert" aria-live="polite"></div>
+
+      <footer>
+        <p><a href="login.html">Volver a iniciar sesión</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Orden acordado: primero validaciones, luego autenticación -->
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

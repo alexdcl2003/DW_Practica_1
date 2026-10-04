@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <header>
+        <h1>Iniciar sesión</h1>
+        <p>Ingresa tu correo y contraseña para continuar.</p>
+      </header>
+
+      <!-- novalidate: las validaciones las hace script.js y no el navegador -->
+      <form id="formLogin" novalidate>
+
+        <div class="campo">
+          <label for="loginCorreo">Correo electrónico</label>
+          <input type="email" id="loginCorreo" name="loginCorreo" placeholder="ejemplo@correo.com" autocomplete="email" required aria-describedby="error-loginCorreo">
+          <small id="error-loginCorreo" class="error-texto"></small>
+        </div>
+
+        <div class="campo">
+          <label for="loginPassword">Contraseña</label>
+          <input type="password" id="loginPassword" name="loginPassword" placeholder="Tu contraseña" autocomplete="current-password" required aria-describedby="error-loginPassword">
+          <small id="error-loginPassword" class="error-texto"></small>
+        </div>
+
+        <!-- Mensaje general de error o éxito del formulario -->
+        <div id="mensajeForm" class="mensaje" role="alert" aria-live="polite"></div>
+
+        <button type="submit" id="btnLogin">Iniciar sesión</button>
+      </form>
+
+      <footer>
+        <p><a href="recuperar.html">¿Olvidaste tu contraseña?</a></p>
+        <p>¿No tienes cuenta? <a href="index.html">Crear cuenta</a></p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Orden acordado: primero validaciones, luego autenticación -->
+  <script src="js/script.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
