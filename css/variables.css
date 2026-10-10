@@ -1,0 +1,60 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ==========================================================================
+   VARIABLES GLOBALES (:root) Y TIPOGRAFÍA
+   ========================================================================== */
+:root {
+  /* Paleta de colores principales */
+  --color-primary: #4f46e5;
+  --color-primary-hover: #4338ca;
+  --color-primary-light: #eef2ff;
+  --color-secondary: #0f172a;
+  
+  /* Fondos y superficies */
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --bg-input-focus: #ffffff;
+  
+  /* Textos */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  
+  /* Bordes */
+  --border-color: #e2e8f0;
+  --border-hover: #cbd5e1;
+  --border-focus: #4f46e5;
+
+  /* Estados de validación */
+  --color-invalido: #ef4444;
+  --bg-invalido: #fef2f2;
+  --border-invalido: #fecaca;
+  --text-invalido: #b91c1c;
+
+  --color-valido: #10b981;
+  --bg-valido: #f0fdf4;
+  --border-valido: #bbf7d0;
+  --text-valido: #15803d;
+
+  /* Radio de bordes */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-focus: 0 0 0 3px rgba(79, 70, 229, 0.18);
+  --shadow-invalido: 0 0 0 3px rgba(239, 68, 68, 0.18);
+  --shadow-valido: 0 0 0 3px rgba(16, 185, 129, 0.18);
+
+  /* Tipografía */
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Transición general */
+  --transition-speed: 0.25s ease;
+}
