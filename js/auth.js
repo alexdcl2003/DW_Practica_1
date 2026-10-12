@@ -164,7 +164,7 @@
       mostrarMensajeGlobal(`Modo simulado: tu código es ${codigo}`, "exito");
       return {
         ok: true,
-        mensaje: "Código enviado correctamente (modo simulado).",
+        mensaje: `Código enviado correctamente ${codigo} (modo simulado).`,
         codigo
       };
     }
